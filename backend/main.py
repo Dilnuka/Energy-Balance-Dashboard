@@ -9,7 +9,7 @@ import pandas as pd
 import io
 
 from app.database import get_db, engine
-from app.models import Base, EnergyFactData, ConversionFactor, PJMRegion, PJMHourlyData
+from app.models import Base, EnergyFactData, ConversionFactor, PJMRegion, PJMHourlyData, EmissionRecord, RenewableProduction
 from app.math_engine import MathEngine
 
 # Create all tables on startup
@@ -366,3 +366,101 @@ def compare_all_regions(db: Session = Depends(get_db)):
                 "min_mw": round(agg[2], 2), "record_count": r.record_count,
             })
     return sorted(result, key=lambda x: x["avg_mw"], reverse=True)
+
+# ─── Emissions Data ──────────────────────────────────────────────────────────
+
+@app.post("/api/upload/emissions", tags=["Emissions Data"])
+async def upload_emissions_csv(file: UploadFile = File(...), db: Session = Depends(get_db)):
+    """Upload U.S. Carbon Dioxide Emissions CSV."""
+    content = await file.read()
+    df = pd.read_csv(io.StringIO(content.decode("utf-8")))
+    
+    # Mapping columns from CSV
+    # year, state-name, sector-name, fuel-name, value
+    required = ["year", "state-name", "sector-name", "fuel-name", "value"]
+    if not all(col in df.columns for col in required):
+        raise HTTPException(status_code=400, detail=f"CSV missing columns: {required}")
+
+    db.query(EmissionRecord).delete() # Simple demo: clear and reload
+    
+    records = []
+    for _, row in df.iterrows():
+        records.append(EmissionRecord(
+            year=int(row["year"]),
+            state=row["state-name"],
+            sector=row["sector-name"],
+            fuel=row["fuel-name"],
+            value=float(row["value"])
+        ))
+    
+    db.bulk_save_objects(records)
+    db.commit()
+    return {"message": f"Successfully uploaded {len(records)} emissions records."}
+
+@app.get("/api/analytics/emissions", tags=["Emissions Data"])
+def get_emissions_analytics(db: Session = Depends(get_db)):
+    """Returns aggregations for emissions data."""
+    # Sector-wise breakdown
+    sector_data = db.query(EmissionRecord.sector, func.sum(EmissionRecord.value)).group_by(EmissionRecord.sector).all()
+    # Fuel-wise breakdown
+    fuel_data = db.query(EmissionRecord.fuel, func.sum(EmissionRecord.value)).group_by(EmissionRecord.fuel).all()
+    # Year-wise trend
+    year_data = db.query(EmissionRecord.year, func.sum(EmissionRecord.value)).group_by(EmissionRecord.year).order_by(EmissionRecord.year).all()
+
+    return {
+        "sector_breakdown": [{"name": s[0], "value": round(s[1], 2)} for s in sector_data],
+        "fuel_breakdown": [{"name": f[0], "value": round(f[1], 2)} for f in fuel_data],
+        "yearly_trend": [{"year": y[0], "value": round(y[1], 2)} for y in year_data]
+    }
+
+# ─── Renewable Production Data ──────────────────────────────────────────────
+
+@app.post("/api/upload/renewables", tags=["Renewable Energy Data"])
+async def upload_renewables_csv(file: UploadFile = File(...), db: Session = Depends(get_db)):
+    """Upload French Wind & Solar Production CSV."""
+    content = await file.read()
+    df = pd.read_csv(io.StringIO(content.decode("utf-8")))
+    
+    # Expected: Date, Start_Hour, Source, Season, Production
+    required = ["Date", "Start_Hour", "Source", "Season", "Production"]
+    if not all(col in df.columns for col in required):
+        raise HTTPException(status_code=400, detail=f"CSV missing columns: {required}")
+
+    db.query(RenewableProduction).delete()
+    
+    records = []
+    for _, row in df.iterrows():
+        try:
+            # Handle date format mm/dd/yyyy
+            dt_str = f"{row['Date']} {int(row['Start_Hour'])}:00:00"
+            dt = datetime.strptime(dt_str, "%m/%d/%Y %H:%M:%S")
+            records.append(RenewableProduction(
+                timestamp=dt,
+                source=row["Source"],
+                value=float(row["Production"]),
+                season=row["Season"]
+            ))
+        except Exception:
+            continue
+            
+    db.bulk_save_objects(records)
+    db.commit()
+    return {"message": f"Successfully uploaded {len(records)} renewable records."}
+
+@app.get("/api/analytics/renewables", tags=["Renewable Energy Data"])
+def get_renewables_analytics(db: Session = Depends(get_db)):
+    """Returns analytics for renewable production."""
+    # Source-wise (Wind vs Solar)
+    source_data = db.query(RenewableProduction.source, func.sum(RenewableProduction.value)).group_by(RenewableProduction.source).all()
+    # Seasonal performance
+    seasonal_data = db.query(RenewableProduction.season, func.avg(RenewableProduction.value)).group_by(RenewableProduction.season).all()
+    # Hourly pattern
+    # For SQLite, we can extract hour from timestamp
+    hourly_data = db.query(func.strftime('%H', RenewableProduction.timestamp), func.avg(RenewableProduction.value)).group_by(func.strftime('%H', RenewableProduction.timestamp)).all()
+
+    return {
+        "source_breakdown": [{"name": s[0], "value": round(s[1], 2)} for s in source_data],
+        "seasonal_performance": [{"name": s[0], "value": round(s[1], 2)} for s in seasonal_data],
+        "hourly_profile": [{"hour": int(h[0]), "value": round(h[1], 2)} for h in hourly_data]
+    }
+

@@ -50,6 +50,39 @@ class PJMHourlyData(Base):
     region = relationship("PJMRegion", back_populates="hourly_data")
 
 
+class EmissionRecord(Base):
+    """U.S. Carbon Dioxide Emissions dataset."""
+    __tablename__ = "emission_records"
+
+    id = Column(Integer, primary_key=True, index=True)
+    year = Column(Integer, index=True)
+    state = Column(String, index=True)
+    sector = Column(String, index=True) # Residential, Commercial, etc.
+    fuel = Column(String, index=True)   # Coal, Petroleum, etc.
+    value = Column(Float)               # Million metric tons of CO2
+
+
+class RenewableProduction(Base):
+    """Wind & Solar Energy Production dataset (France)."""
+    __tablename__ = "renewable_production"
+
+    id = Column(Integer, primary_key=True, index=True)
+    timestamp = Column(DateTime, index=True)
+    source = Column(String, index=True)  # Wind, Solar, Mixed
+    value = Column(Float)                # Production in MWh
+    season = Column(String)              # Winter, Spring, Summer, Fall
+
+
+class SankeyFlow(Base):
+    """Energy Balance Flow data (Sankey)."""
+    __tablename__ = "sankey_flows"
+
+    id = Column(Integer, primary_key=True, index=True)
+    source = Column(String, index=True)
+    target = Column(String, index=True)
+    value = Column(Float)
+
+
 class EnergyFactData(Base):
     __tablename__ = "energy_fact_data"
     

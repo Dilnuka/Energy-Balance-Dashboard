@@ -4,7 +4,7 @@ import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import Dashboard from './pages/Dashboard';
 import DataSubmission from './pages/DataSubmission';
-import StateWiseUsage from './pages/StateWiseUsage';
+import DataManagement from './pages/DataManagement';
 import DataAnalysis from './pages/DataAnalysis';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/submission" element={<DataSubmission />} />
-              <Route path="/state-usage" element={<StateWiseUsage />} />
+              <Route path="/data-management" element={<DataManagement />} />
               <Route path="/analysis" element={<DataAnalysis />} />
             </Routes>
           </main>

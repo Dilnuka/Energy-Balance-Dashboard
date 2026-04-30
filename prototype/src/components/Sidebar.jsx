@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, FileSpreadsheet, Settings, PieChart, Users, BookOpen, MapPin, BarChart2 } from 'lucide-react';
+import { LayoutDashboard, FileSpreadsheet, Settings, PieChart, Users, BookOpen, MapPin, BarChart2, Database } from 'lucide-react';
 
 const Sidebar = () => {
   return (
@@ -26,11 +26,11 @@ const Sidebar = () => {
           <span>Data Submission</span>
         </NavLink>
         <NavLink 
-          to="/state-usage" 
+          to="/data-management" 
           className={({isActive}) => isActive ? "nav-item active" : "nav-item"}
         >
-          <MapPin size={20} />
-          <span>State-wise Usage</span>
+          <Database size={20} />
+          <span>Data Management</span>
         </NavLink>
         <NavLink
           to="/analysis"

@@ -1,0 +1,223 @@
+year,source,target,value,unit
+2019,Domestic extraction,Power plants,1800,PJ
+2019,Domestic extraction,Refineries,1260,PJ
+2019,Domestic extraction,Heat plants,342,PJ
+2019,Domestic extraction,Industry,432,PJ
+2019,Domestic extraction,Exports,252,PJ
+2019,Domestic extraction,Non-energy use,342,PJ
+2019,Imports,Power plants,522,PJ
+2019,Imports,Refineries,612,PJ
+2019,Imports,Industry,171,PJ
+2019,Imports,Exports,81,PJ
+2019,Imports,Non-energy use,162,PJ
+2019,Renewables,Power plants,702,PJ
+2019,Renewables,Heat plants,684,PJ
+2019,Renewables,Industry,252,PJ
+2019,Renewables,Residential,171,PJ
+2019,Renewables,Commercial,162,PJ
+2019,Power plants,Electricity,1890,PJ
+2019,Power plants,Losses,1134,PJ
+2019,Refineries,Refined fuels,1710,PJ
+2019,Refineries,Losses,162,PJ
+2019,Heat plants,District heat,765,PJ
+2019,Heat plants,Losses,261,PJ
+2019,Electricity,Grid,1890,PJ
+2019,Grid,Industry,594,PJ
+2019,Grid,Transport,126,PJ
+2019,Grid,Residential,558,PJ
+2019,Grid,Commercial,468,PJ
+2019,Grid,Losses,144,PJ
+2019,Refined fuels,Transport,1008,PJ
+2019,Refined fuels,Industry,252,PJ
+2019,Refined fuels,Residential,180,PJ
+2019,Refined fuels,Commercial,135,PJ
+2019,Refined fuels,Exports,135,PJ
+2019,District heat,Industry,180,PJ
+2019,District heat,Residential,342,PJ
+2019,District heat,Commercial,198,PJ
+2019,District heat,Losses,45,PJ
+2020,Domestic extraction,Power plants,1760,PJ
+2020,Domestic extraction,Refineries,1232,PJ
+2020,Domestic extraction,Heat plants,334,PJ
+2020,Domestic extraction,Industry,422,PJ
+2020,Domestic extraction,Exports,246,PJ
+2020,Domestic extraction,Non-energy use,334,PJ
+2020,Imports,Power plants,510,PJ
+2020,Imports,Refineries,598,PJ
+2020,Imports,Industry,167,PJ
+2020,Imports,Exports,79,PJ
+2020,Imports,Non-energy use,158,PJ
+2020,Renewables,Power plants,686,PJ
+2020,Renewables,Heat plants,669,PJ
+2020,Renewables,Industry,246,PJ
+2020,Renewables,Residential,167,PJ
+2020,Renewables,Commercial,158,PJ
+2020,Power plants,Electricity,1848,PJ
+2020,Power plants,Losses,1109,PJ
+2020,Refineries,Refined fuels,1672,PJ
+2020,Refineries,Losses,158,PJ
+2020,Heat plants,District heat,748,PJ
+2020,Heat plants,Losses,255,PJ
+2020,Electricity,Grid,1848,PJ
+2020,Grid,Industry,581,PJ
+2020,Grid,Transport,123,PJ
+2020,Grid,Residential,546,PJ
+2020,Grid,Commercial,458,PJ
+2020,Grid,Losses,141,PJ
+2020,Refined fuels,Transport,986,PJ
+2020,Refined fuels,Industry,246,PJ
+2020,Refined fuels,Residential,176,PJ
+2020,Refined fuels,Commercial,132,PJ
+2020,Refined fuels,Exports,132,PJ
+2020,District heat,Industry,176,PJ
+2020,District heat,Residential,334,PJ
+2020,District heat,Commercial,194,PJ
+2020,District heat,Losses,44,PJ
+2021,Domestic extraction,Power plants,1860,PJ
+2021,Domestic extraction,Refineries,1302,PJ
+2021,Domestic extraction,Heat plants,353,PJ
+2021,Domestic extraction,Industry,446,PJ
+2021,Domestic extraction,Exports,260,PJ
+2021,Domestic extraction,Non-energy use,353,PJ
+2021,Imports,Power plants,539,PJ
+2021,Imports,Refineries,632,PJ
+2021,Imports,Industry,177,PJ
+2021,Imports,Exports,84,PJ
+2021,Imports,Non-energy use,167,PJ
+2021,Renewables,Power plants,725,PJ
+2021,Renewables,Heat plants,707,PJ
+2021,Renewables,Industry,260,PJ
+2021,Renewables,Residential,177,PJ
+2021,Renewables,Commercial,167,PJ
+2021,Power plants,Electricity,1953,PJ
+2021,Power plants,Losses,1172,PJ
+2021,Refineries,Refined fuels,1767,PJ
+2021,Refineries,Losses,167,PJ
+2021,Heat plants,District heat,790,PJ
+2021,Heat plants,Losses,270,PJ
+2021,Electricity,Grid,1953,PJ
+2021,Grid,Industry,614,PJ
+2021,Grid,Transport,130,PJ
+2021,Grid,Residential,577,PJ
+2021,Grid,Commercial,484,PJ
+2021,Grid,Losses,149,PJ
+2021,Refined fuels,Transport,1042,PJ
+2021,Refined fuels,Industry,260,PJ
+2021,Refined fuels,Residential,186,PJ
+2021,Refined fuels,Commercial,140,PJ
+2021,Refined fuels,Exports,140,PJ
+2021,District heat,Industry,186,PJ
+2021,District heat,Residential,353,PJ
+2021,District heat,Commercial,205,PJ
+2021,District heat,Losses,46,PJ
+2022,Domestic extraction,Power plants,1940,PJ
+2022,Domestic extraction,Refineries,1358,PJ
+2022,Domestic extraction,Heat plants,369,PJ
+2022,Domestic extraction,Industry,466,PJ
+2022,Domestic extraction,Exports,272,PJ
+2022,Domestic extraction,Non-energy use,369,PJ
+2022,Imports,Power plants,563,PJ
+2022,Imports,Refineries,660,PJ
+2022,Imports,Industry,184,PJ
+2022,Imports,Exports,87,PJ
+2022,Imports,Non-energy use,175,PJ
+2022,Renewables,Power plants,757,PJ
+2022,Renewables,Heat plants,737,PJ
+2022,Renewables,Industry,272,PJ
+2022,Renewables,Residential,184,PJ
+2022,Renewables,Commercial,175,PJ
+2022,Power plants,Electricity,2037,PJ
+2022,Power plants,Losses,1222,PJ
+2022,Refineries,Refined fuels,1843,PJ
+2022,Refineries,Losses,175,PJ
+2022,Heat plants,District heat,824,PJ
+2022,Heat plants,Losses,281,PJ
+2022,Electricity,Grid,2037,PJ
+2022,Grid,Industry,640,PJ
+2022,Grid,Transport,136,PJ
+2022,Grid,Residential,601,PJ
+2022,Grid,Commercial,504,PJ
+2022,Grid,Losses,155,PJ
+2022,Refined fuels,Transport,1086,PJ
+2022,Refined fuels,Industry,272,PJ
+2022,Refined fuels,Residential,194,PJ
+2022,Refined fuels,Commercial,146,PJ
+2022,Refined fuels,Exports,146,PJ
+2022,District heat,Industry,194,PJ
+2022,District heat,Residential,369,PJ
+2022,District heat,Commercial,213,PJ
+2022,District heat,Losses,48,PJ
+2023,Domestic extraction,Power plants,2000,PJ
+2023,Domestic extraction,Refineries,1400,PJ
+2023,Domestic extraction,Heat plants,380,PJ
+2023,Domestic extraction,Industry,480,PJ
+2023,Domestic extraction,Exports,280,PJ
+2023,Domestic extraction,Non-energy use,380,PJ
+2023,Imports,Power plants,580,PJ
+2023,Imports,Refineries,680,PJ
+2023,Imports,Industry,190,PJ
+2023,Imports,Exports,90,PJ
+2023,Imports,Non-energy use,180,PJ
+2023,Renewables,Power plants,780,PJ
+2023,Renewables,Heat plants,760,PJ
+2023,Renewables,Industry,280,PJ
+2023,Renewables,Residential,190,PJ
+2023,Renewables,Commercial,180,PJ
+2023,Power plants,Electricity,2100,PJ
+2023,Power plants,Losses,1260,PJ
+2023,Refineries,Refined fuels,1900,PJ
+2023,Refineries,Losses,180,PJ
+2023,Heat plants,District heat,850,PJ
+2023,Heat plants,Losses,290,PJ
+2023,Electricity,Grid,2100,PJ
+2023,Grid,Industry,660,PJ
+2023,Grid,Transport,140,PJ
+2023,Grid,Residential,620,PJ
+2023,Grid,Commercial,520,PJ
+2023,Grid,Losses,160,PJ
+2023,Refined fuels,Transport,1120,PJ
+2023,Refined fuels,Industry,280,PJ
+2023,Refined fuels,Residential,200,PJ
+2023,Refined fuels,Commercial,150,PJ
+2023,Refined fuels,Exports,150,PJ
+2023,District heat,Industry,200,PJ
+2023,District heat,Residential,380,PJ
+2023,District heat,Commercial,220,PJ
+2023,District heat,Losses,50,PJ
+2024,Domestic extraction,Power plants,2080,PJ
+2024,Domestic extraction,Refineries,1456,PJ
+2024,Domestic extraction,Heat plants,395,PJ
+2024,Domestic extraction,Industry,499,PJ
+2024,Domestic extraction,Exports,291,PJ
+2024,Domestic extraction,Non-energy use,395,PJ
+2024,Imports,Power plants,603,PJ
+2024,Imports,Refineries,707,PJ
+2024,Imports,Industry,198,PJ
+2024,Imports,Exports,94,PJ
+2024,Imports,Non-energy use,187,PJ
+2024,Renewables,Power plants,811,PJ
+2024,Renewables,Heat plants,790,PJ
+2024,Renewables,Industry,291,PJ
+2024,Renewables,Residential,198,PJ
+2024,Renewables,Commercial,187,PJ
+2024,Power plants,Electricity,2184,PJ
+2024,Power plants,Losses,1310,PJ
+2024,Refineries,Refined fuels,1976,PJ
+2024,Refineries,Losses,187,PJ
+2024,Heat plants,District heat,884,PJ
+2024,Heat plants,Losses,302,PJ
+2024,Electricity,Grid,2184,PJ
+2024,Grid,Industry,686,PJ
+2024,Grid,Transport,146,PJ
+2024,Grid,Residential,645,PJ
+2024,Grid,Commercial,541,PJ
+2024,Grid,Losses,166,PJ
+2024,Refined fuels,Transport,1165,PJ
+2024,Refined fuels,Industry,291,PJ
+2024,Refined fuels,Residential,208,PJ
+2024,Refined fuels,Commercial,156,PJ
+2024,Refined fuels,Exports,156,PJ
+2024,District heat,Industry,208,PJ
+2024,District heat,Residential,395,PJ
+2024,District heat,Commercial,229,PJ
+2024,District heat,Losses,52,PJ
